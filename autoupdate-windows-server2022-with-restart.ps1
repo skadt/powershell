@@ -1,4 +1,6 @@
-﻿Write-Output "`n" (Get-Date -Format "yyyy-MM-dd HH:mm:ss") "Включаем обновление других продуктов Microsoft"
+Function Install-WindowsUpdatesNow {
+ 
+ Write-Output "`n" (Get-Date -Format "yyyy-MM-dd HH:mm:ss") "Включаем обновление других продуктов Microsoft"
 $ServiceManager = New-Object -ComObject "Microsoft.Update.ServiceManager" -Verbose
 $ServiceManager.ClientApplicationID = "My App"
 $ServiceManager.AddService2( "7971f918-a847-4430-9279-4a52d1efe18d",7,"")
@@ -98,3 +100,5 @@ $cnt = 1
 Start-Sleep -Seconds 60
 
 Restart-Computer -Force -Confirm:$false 
+
+}
