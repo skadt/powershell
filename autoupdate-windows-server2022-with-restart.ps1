@@ -25,7 +25,7 @@ $ServiceManager.AddService2( "7971f918-a847-4430-9279-4a52d1efe18d",7,"")
     Write-Host "Beginning system scan. This may take a while..."
     $UpdateSession = New-Object -ComObject Microsoft.Update.Session
     $UpdateSearcher = $UpdateSession.CreateUpdateSearcher()
-    $SearchResults = $UpdateSearcher.Search("IsInstalled=0 and Type='Software'")
+    $SearchResults = $UpdateSearcher.Search("IsInstalled=0")
 
     # CREATES OUTPUT OBJECT FOR EACH REQUIRED PATCH
     If ($SearchResults.Updates.Count -eq 0) {
